@@ -1,0 +1,60 @@
+.login-page { 
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .login-container {
+    //todo
+  }
+  
+  .login-card { 
+    background: rgb(180, 180, 219);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+    margin-top: 40%;
+    align-items: center;
+  }
+  
+  .login-title {
+    font-size: 1.8rem;
+    text-align: center;
+    color: cornflowerblue;
+  }
+  
+  .input-item {
+    --background: transparent;
+    --placeholder-color: #ff006a;
+    
+    ion-label {
+      color: rgb(88, 0, 139);
+    }
+  
+    ion-input {
+      color: #0f0f0f;
+    }
+  }
+  
+  .login-button {
+    --background: rgb(3, 3, 48);
+    --border-radius: 8px;
+    margin-top: 15px;
+  }
+  
+  .register-button {
+    color: #16070c;
+    text-transform: uppercase;
+    margin-top: 10px;
+  }
+  
+  .forgot-password {
+    text-align: center;
+    margin-top: 10px;
+  
+    a {
+      color: rgb(139, 9, 0);
+      text-decoration: underline;
+    }
+  }
+  
