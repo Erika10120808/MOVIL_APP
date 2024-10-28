@@ -7,7 +7,7 @@ import { Router, NavigationExtras } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage {
-  // src/app/login/login.page.ts
+
     usuario!: string;
     password!: string;
 
