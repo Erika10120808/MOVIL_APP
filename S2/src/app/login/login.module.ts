@@ -1,17 +1,16 @@
-// src/app/app.module.ts
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
-import { MatInputModule } from '@angular/material/input';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
 
 @NgModule({
+  declarations: [
+    AppComponent,
+    // otros componentes
+  ],
   imports: [
-    // Otros imports
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatInputModule,
+    BrowserModule,
+    // otros módulos necesarios
   ],
-  providers: [
-    MatDatepickerModule,
-  ],
+  bootstrap: [AppComponent]  // Asegúrate de incluir el componente de arranque aquí
 })
-export class AppModule {}
+export class AppModule { }
