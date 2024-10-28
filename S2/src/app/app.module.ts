@@ -1,28 +1,32 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { IonicModule } from '@ionic/angular';
 
 // Angular Material Modules
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 
+import { AppComponent } from './app.component';      // Asegúrate de que el componente raíz esté importado
+import { AppRoutingModule } from './app-routing.module';  // Importa el módulo de enrutamiento principal
+
 @NgModule({
   declarations: [
-    // Declara los componentes, directivas y pipes del módulo aquí
+    AppComponent  // Declara el componente raíz
   ],
   imports: [
-    BrowserModule,              // Asegura que el módulo de navegador esté importado
-    BrowserAnimationsModule,     // Necesario para las animaciones de Angular Material
-    MatDatepickerModule,         // Módulo de selector de fechas de Angular Material
-    MatNativeDateModule,         // Proveedor de fechas nativas
-    MatInputModule,              // Módulo de input de Angular Material
+    BrowserModule,              
+    BrowserAnimationsModule,     
+    MatDatepickerModule,         
+    MatNativeDateModule,         
+    MatInputModule,              
+    IonicModule.forRoot(),        // Necesario para las configuraciones de Ionic
+    AppRoutingModule             // Importa el enrutamiento principal para que funcione
   ],
   providers: [
-    MatDatepickerModule,         // Asegura que el Datepicker esté disponible en todo el módulo
+    MatDatepickerModule          
   ],
-  bootstrap: [
-    // Componente raíz que se debe cargar en el arranque
-  ],
+  bootstrap: [AppComponent]      // Arranca con AppComponent como el componente principal
 })
 export class AppModule {}

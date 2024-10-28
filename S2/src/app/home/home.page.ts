@@ -17,10 +17,11 @@ export class HomePage implements OnInit {
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-   
-    if (this.route.snapshot.data['usuario']) {
-      this.usuario = this.route.snapshot.data['usuario'];
-    }
+    this.route.queryParams.subscribe(params => {
+      if (this.route.getCurrentNavigation()?.extras.state) {
+        this.usuario = this.route.getCurrentNavigation().extras.state['usuario'];
+      }
+    });
   }
 
   limpiarCampos() {
@@ -28,6 +29,14 @@ export class HomePage implements OnInit {
     this.apellido = '';
     this.nivelEducacion = '';
     this.fechaNacimiento = null;
+    // Agrega animación de "shake" a los campos
+    document.getElementById('nombreInput')?.classList.add('input-animation');
+    document.getElementById('apellidoInput')?.classList.add('input-animation');
+  
+    setTimeout(() => {
+      document.getElementById('nombreInput')?.classList.remove('input-animation');
+      document.getElementById('apellidoInput')?.classList.remove('input-animation');
+    }, 1000);
   }
 
   mostrarInformacion() {

@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
+import { RouterModule } from '@angular/router';
+
+import { LoginPage } from './login.page';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    // otros componentes
-  ],
   imports: [
-    BrowserModule,
-    // otros módulos necesarios
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    RouterModule.forChild([{ path: '', component: LoginPage }])  // Configuración de rutas para esta página
   ],
-  bootstrap: [AppComponent]  // Asegúrate de incluir el componente de arranque aquí
+  declarations: [LoginPage]
 })
-export class AppModule { }
+export class LoginPageModule {}

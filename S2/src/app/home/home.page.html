@@ -11,8 +11,8 @@
 
 <ion-content>
   <ion-item>
-    <ion-label>Usuario</ion-label>
-    <ion-text>{{ usuario }}</ion-text>
+    <ion-input type="text" [(ngModel)]="usuario" name="usuario" required minlength="3" maxlength="8" pattern="[a-zA-Z0-9]*"></ion-input>
+    <ion-input type="password" [(ngModel)]="password" name="password" required minlength="4" maxlength="4" inputmode="numeric"></ion-input>
   </ion-item>
   
   <ion-item>
