@@ -1,20 +1,17 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
-import { IonicModule } from '@ionic/angular';
-
-import { LoginPageRoutingModule } from './login-routing.module';
-
-import { LoginPage } from './login.page';
+// src/app/app.module.ts
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    LoginPageRoutingModule
+    // Otros imports
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatInputModule,
   ],
-  declarations: [LoginPage]
+  providers: [
+    MatDatepickerModule,
+  ],
 })
-export class LoginPageModule {}
+export class AppModule {}
