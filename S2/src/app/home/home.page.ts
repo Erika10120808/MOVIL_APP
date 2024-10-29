@@ -1,31 +1,28 @@
 import { Component } from '@angular/core';
-import { Router, NavigationExtras } from '@angular/router';
-
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
 })
-export class LoginPage {
+export class HomePage {
   usuario: string = '';
   password: string = '';
-
-  constructor(private router: Router) {}  // Constructor corregido
-
-  onSubmit() {
-    if (this.usuario && this.password) {
-      const navigationExtras: NavigationExtras = {
-        state: { usuario: this.usuario }
-      };
-      this.router.navigate(['home'], navigationExtras);
-    } else {
-      alert('Por favor, verifica los datos ingresados.');
-    }
-  }
+  nombre: string = '';
+  apellido: string = '';
+  nivelEducacion: string = '';
+  fechaNacimiento: Date | null = null;
 
   limpiarCampos() {
-    this.usuario = '';
-    this.password = '';
+    this.nombre = '';
+    this.apellido = '';
+    this.nivelEducacion = '';
+    this.fechaNacimiento = null;
+    this.password = ''; 
+  }
+
+  mostrarInformacion() {
+    alert(`Nombre: ${this.nombre}\nApellido: ${this.apellido}`);
   }
 }
+

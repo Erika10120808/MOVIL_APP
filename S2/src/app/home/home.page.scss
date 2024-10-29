@@ -1,15 +1,61 @@
+.login-page { 
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1c1c1c; 
+}
+
+.login-card { 
+  width: 280px;
+  padding: 20px;
+  background: #2e2b4f; 
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+  text-align: center;
+}
+
+.login-title {
+  font-size: 1.6rem;
+  color: #ffffff; 
+  margin-bottom: 15px;
+}
+
+.input-item {
+  --background: transparent;
+  --placeholder-color: #bb86fc; 
+  
+  ion-label {
+    color: #bb86fc; 
+  }
+
+  ion-input {
+    color: #ffffff; 
+    --placeholder-color: #bb86fc; 
+  }
+}
+
+
+.login-button {
+  background: #000000; 
+  color: #ffffff; 
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.datepicker-container {
+  margin-top: 10px;
+}
+
+.input-animation {
+  animation: shake 0.8s;
+}
+
+
 @keyframes shake {
   0% { transform: translateX(0); }
   25% { transform: translateX(-5px); }
   50% { transform: translateX(5px); }
   75% { transform: translateX(-5px); }
   100% { transform: translateX(0); }
-}
-
-.title-animation {
-  animation: shake 1s;
-}
-
-.input-animation {
-  animation: shake 1s;
 }

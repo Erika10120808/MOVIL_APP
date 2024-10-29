@@ -1,46 +1,54 @@
-
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>Home</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <p>Bienvenido a la página principal</p>
-</ion-content>
+<ion-content class="login-page">
+  <div class="login-card">
+    <h1 class="login-title">Login</h1>
+    <form>
+      <ion-item class="input-item input-animation">
+        <ion-label position="floating">Usuario</ion-label>
+        <ion-input type="text" [(ngModel)]="usuario" [ngModelOptions]="{standalone: true}" required minlength="3" maxlength="8" pattern="[a-zA-Z0-9]*"></ion-input>
+      </ion-item>
 
-<ion-content>
-  <ion-item>
-    <ion-input type="text" [(ngModel)]="usuario" name="usuario" required minlength="3" maxlength="8" pattern="[a-zA-Z0-9]*"></ion-input>
-    <ion-input type="password" [(ngModel)]="password" name="password" required minlength="4" maxlength="4" inputmode="numeric"></ion-input>
-  </ion-item>
-  
-  <ion-item>
-    <ion-label position="floating">Nombre</ion-label>
-    <ion-input id="nombreInput" type="text" [(ngModel)]="nombre" name="nombre"></ion-input>
-  </ion-item>
-  
-  <ion-item>
-    <ion-label position="floating">Apellido</ion-label>
-    <ion-input id="apellidoInput" type="text" [(ngModel)]="apellido" name="apellido"></ion-input>
-  </ion-item>
-  
-  <ion-item>
-    <ion-label position="floating">Nivel de educación</ion-label>
-    <ion-select [(ngModel)]="nivelEducacion">
-      <ion-select-option value="primaria">Primaria</ion-select-option>
-      <ion-select-option value="secundaria">Secundaria</ion-select-option>
-      <ion-select-option value="universidad">Universidad</ion-select-option>
-    </ion-select>
-  </ion-item>
-  
-  <ion-item>
-    <ion-label>Fecha Nacimiento</ion-label>
-    <input matInput [matDatepicker]="picker" [(ngModel)]="fechaNacimiento">
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </ion-item>
+      <ion-item class="input-item input-animation">
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input type="password" [(ngModel)]="password" name="password" required minlength="4" maxlength="4" inputmode="numeric"></ion-input>
+      </ion-item>
 
-  <ion-button expand="block" (click)="limpiarCampos()">Limpiar</ion-button>
-  <ion-button expand="block" (click)="mostrarInformacion()">Mostrar</ion-button>
+      <ion-item class="input-item input-animation">
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input type="text" [(ngModel)]="nombre" name="nombre"></ion-input>
+      </ion-item>
+
+      <ion-item class="input-item input-animation">
+        <ion-label position="floating">Apellido</ion-label>
+        <ion-input type="text" [(ngModel)]="apellido" name="apellido"></ion-input>
+      </ion-item>
+
+      <ion-item class="input-item input-animation">
+        <ion-label position="floating">Nivel de educación</ion-label>
+        <ion-select [(ngModel)]="nivelEducacion" name="nivelEducacion">
+          <ion-select-option value="primaria">Primaria</ion-select-option>
+          <ion-select-option value="secundaria">Secundaria</ion-select-option>
+          <ion-select-option value="universidad">Universidad</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item class="input-item datepicker-container input-animation">
+        <ion-label position="floating">Fecha de Nacimiento</ion-label>
+        <ion-datetime-button datetime="datetime"></ion-datetime-button>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime id="datetime" presentation="date" [(ngModel)]="fechaNacimiento" name="fechaNacimiento"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-item>
+
+      <ion-button expand="block" class="login-button" (click)="limpiarCampos()">Limpiar</ion-button>
+      <ion-button expand="block" color="secondary" class="login-button" (click)="mostrarInformacion()">Ingresar</ion-button>
+    </form>
+  </div>
 </ion-content>
